@@ -1,0 +1,159 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    color: #ddd;
+}
+
+
+#container {
+    display: flex;
+    height: calc(100% - 50px);
+}
+
+#battlefield {
+    flex: 4;
+    position: relative;
+    background-color: #f0f0f0;
+    overflow: auto;
+}
+
+#canvasContainer {
+    position: relative;
+    width: 10000px;
+    height: 10000px;
+}
+
+#gridOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 100;
+    background-image:
+            repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,0,0,0.2) 50px),
+            repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.2) 50px);
+    background-size: 50px 50px;
+}
+
+
+#sidebar {
+    flex: 1;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+
+.draggable {
+    position: absolute;
+    cursor: move;
+}
+
+
+.background {
+    border: 2px dashed transparent;
+    z-index: 50;
+}
+
+.background.selected {
+    border: 2px dashed red;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,0.5);
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+
+.entity {
+    border: 2px solid #333;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    z-index: 150;
+}
+
+.entity.selected {
+    border-color: red;
+}
+
+.entity img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#entityDetails input[type="text"] {
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    width: 100px;
+}
+
+.custom-stat {
+    margin-top: 10px;
+}
+
+.custom-stat input {
+    margin-right: 5px;
+}
+
+.custom-stat button {
+    margin-left: 5px;
+}
+
+#entityDetails .img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 60px);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+#entityDetails .img-cell {
+    width: 60px;
+    height: 60px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#entityDetails .img-cell.selected {
+    border-color: blue;
+}

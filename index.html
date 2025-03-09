@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DND Combat</title>
-  <link rel="stylesheet" href="res/css/style.css">
+    <meta charset="UTF-8">
+    <title>DND Combat</title>
+    <link rel="stylesheet" href="res/css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <!-- Discord embed stuff -->
+    <meta property="og:url" content="https://bravebearer.github.io/dnd/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DND Combat Visualizer">
+    <meta property="og:description" content="Help your players visualize their DND combat environment">
+    <meta property="og:image" content="https://example.com/example-image.jpg">
 </head>
+
 <body>
-  <p>This placeholder is so skibidi</p>
+    <nav id="navbar">
+        <button class="nav-btn"><i class="fa fa-home"></i> Placeholder</button>
+        <button class="nav-btn"><i class="fa fa-cog"></i> Stuff</button>
+        <button class="nav-btn"><i class="fa fa-info-circle"></i> So sigma!</button>
+    </nav>
+
+    <div id="container">
+        <div id="battlefield">
+            <div id="canvasContainer">
+                <div id="gridOverlay"></div>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <h2>Entity Info</h2>
+            <div id="entityDetails">
+                <p>No entity selected.</p>
+            </div>
+            <hr>
+            <div id="controls">
+                <h3>Controls</h3>
+                <button id="addBackgroundBtn">Add Background</button>
+                <button id="addEntityBtn">Add Entity</button>
+                <button id="exportBtn">Export JSON</button>
+                <button id="importBtn">Import JSON</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="backgroundFileInput" accept="image/*" style="display:none">
+    <input type="file" id="entityFileInput" accept="image/*" style="display:none">
+    <input type="file" id="importInput" accept=".json" style="display:none">
+
+    <script type="module" src="res/js/main.js"></script>
 </body>
 </html>
