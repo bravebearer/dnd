@@ -22,8 +22,8 @@ const PAN_STEP = 20;
 
 /** edit as you add more images for entity presets */
 export const presetImages = [
-    '/res/img/goblin.png',
-    '/res/img/ringabel.jpg',
+    './res/img/goblin.png',
+    './res/img/ringabel.jpg',
 ];
 
 const battlefield = document.getElementById("battlefield");
