@@ -1,3 +1,36 @@
+:root {
+    color-scheme: light dark;
+
+    --light-primary-color: #ffffff;
+    --dark-primary-color:  #2e2a2a;
+
+    --light-text-color: #000000;
+    --dark-text-color:  #ffffff;
+
+    --light-accent-color: #ffffff;
+    --dark-accent-color:  #1e1b1b;
+
+    --light-navbar-color: #ccc0c0;
+    --dark-navbar-color: #453f3f;
+
+    --light-sidebar-color: #ececec;
+    --dark-sidebar-color:  #2e2a2a;
+
+    --light-grid-color: repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,0,0,0.2) 50px),
+                        repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.2) 50px);
+    --dark-grid-color: repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(255, 255, 255, 0.2) 50px),
+                       repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(255, 255, 255, 0.2) 50px);
+
+    --light-resize-handle-color: rgba(0,0,0,0.5);
+    --dark-resize-handle-color: rgba(255, 255, 255, 0.5);
+
+    --light-entity-border-color: #f;
+    --dark-entity-border-color: #f;
+
+    --light-selected-color: #b80f0f;
+    --dark-selected-color: #6e2e2e;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -9,22 +42,22 @@ body, html {
 #navbar {
     display: flex;
     align-items: center;
-    background-color: #333;
-    color: #fff;
+    background-color: light-dark(var(--light-navbar-color), var(--dark-navbar-color));
+    color: light-dark(var(--light-text-color), var(--dark-text-color));
     padding: 10px;
 }
 
 .nav-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: light-dark(var(--light-text-color), var(--dark-text-color));;
     margin-right: 15px;
     font-size: 16px;
     cursor: pointer;
 }
 
 .nav-btn:hover {
-    color: #ddd;
+    color: light-dark(var(--light-accent-color), var(--dark-accent-color));
 }
 
 
@@ -36,7 +69,7 @@ body, html {
 #battlefield {
     flex: 4;
     position: relative;
-    background-color: #f0f0f0;
+    background-color: light-dark(var(--light-accent-color), var(--dark-accent-color));
     overflow: auto;
 }
 
@@ -54,19 +87,17 @@ body, html {
     bottom: 0;
     pointer-events: none;
     z-index: 100;
-    background-image:
-            repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,0,0,0.2) 50px),
-            repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.2) 50px);
+    background-image: light-dark(var(--light-grid-color), var(--dark-grid-color));
     background-size: 50px 50px;
 }
 
 
 #sidebar {
     flex: 1;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid light-dark(var(--light-accent-color), var(--dark-accent-color));
     padding: 10px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: light-dark(var(--light-sidebar-color), var(--dark-sidebar-color));
     overflow-y: auto;
 }
 
@@ -83,14 +114,14 @@ body, html {
 }
 
 .background.selected {
-    border: 2px dashed red;
+    border: 2px dashed light-dark(var(--light-selected-color), var(--dark-selected-color));
 }
 
 .resize-handle {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: rgba(0,0,0,0.5);
+    background: light-dark(var(--light-resize-handle-color), var(--dark-resize-handle-color));
     bottom: 0;
     right: 0;
     cursor: se-resize;
@@ -98,17 +129,17 @@ body, html {
 
 
 .entity {
-    border: 2px solid #333;
+    border: 3px solid light-dark(var(--light-entity-border-color), var(--dark-entity-border-color));
     border-radius: 50%;
     overflow: hidden;
     width: 50px;
     height: 50px;
-    background-color: #ddd;
+    background-color: light-dark(var(--light-accent-color), var(--dark-accent-color));
     z-index: 150;
 }
 
 .entity.selected {
-    border-color: red;
+    border: 3px dashed light-dark(var(--light-selected-color), var(--dark-selected-color));
 }
 
 .entity img {
@@ -155,5 +186,5 @@ body, html {
 }
 
 #entityDetails .img-cell.selected {
-    border-color: blue;
+    border-color: var(--selected-color);
 }
