@@ -186,5 +186,5 @@ body, html {
 }
 
 #entityDetails .img-cell.selected {
-    border-color: var(--selected-color);
+    border-color: light-dark(var(--light-selected-color), var(--dark-selected-color));
 }
